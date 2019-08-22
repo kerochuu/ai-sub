@@ -6,8 +6,8 @@ from slack import WebClient
 from slackeventsapi import SlackEventAdapter
 
 
-SLACK_TOKEN = "xoxp-731556186981-731084486436-731108649988-fcf8d8ead796bbd0bfcfb6ecfc4259be"
-SLACK_SIGNING_SECRET = "2fe2841d8f1d165d1bcbc1823a021159"
+SLACK_TOKEN = "xoxb-522539944562-736199143463-qmmUPNK1nQVNFCj5P2SLtTsK"
+SLACK_SIGNING_SECRET = "57ff273e36cc95d388b9a7746414b4bc"
 
 app = Flask(__name__)
 
@@ -40,7 +40,7 @@ def app_mentioned(event_data):
 
 @app.route("/", methods=["GET"])
 def index():
-    return "<h1>Server is ready.</h1>"
+    return "<h1>keroBot 출동 준비완료!!</h1>"
 
 if __name__ == '__main__':
     app.run()
