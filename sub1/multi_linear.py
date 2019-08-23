@@ -203,13 +203,16 @@ print("N_beta_3: %f" % N_beta_3)
 N_X_test_pred = prediction(X_test,N_beta_x)
 
 # Req. 3-3-2. Mean squared error 계산
-# print("Mean squared error: %.2f" % N_error)
+Y_test_2D=np.reshape(Y_test,(-1,1))
+
+# N_error=np.mean((Y_test_2D-N_X_test_pred)**2)
+print("Mean squared error: %.2f" % mean_squared_error(Y_test_2D,N_X_test_pred))
 # # Req. 3-3-3. Variance score 계산
-# print("Variance score: %.2f" % None)
+print("Variance score: %.2f" % r2_score(Y_test_2D,N_X_test_pred))
 
 # Req. 3-4-1. 예상 판매량 출력
 print("TV: {}, Radio: {}, Newspaper: {} 판매량: {}".format(
    X_test[3][0],X_test[3][1],X_test[3][2],Y_test[3]))
 
 print("예상 판매량: {}".format(expected_sales(
-       float(X_test[3][0]),float(X_test[3][1]),float(X_test[3][2]), N_beta_x[0], N_beta_x[1], N_beta_x[2], N_beta_3)))
+       float(X_test[3][0]),float(X_test[3][1]),float(X_test[3][2]), N_beta_x[0], N_beta_x[1], N_beta_x[2], N_beta_3)[0]))
